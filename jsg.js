@@ -22,12 +22,12 @@ function guess() {
                 if (naturalField >= answer) {
                     numAttempts += 1;
                     document.getElementById("aC").innerHTML = numAttempts;
-                    window.alert("The number is too big... try again!");
+                    window.alert("The number is too high... try again!");
                 } else {
                     if (naturalField <= answer) {
                         numAttempts += 1;
                         document.getElementById("aC").innerHTML = numAttempts;
-                        window.alert("The number is too small... try again!");
+                        window.alert("The number is too low... try again!");
                     } else {
                         window.alert("That isn't a number... try again!");
                     }
