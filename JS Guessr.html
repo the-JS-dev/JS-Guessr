@@ -3,6 +3,7 @@
     <head>
         <!--structure-->
         <title>JS Guessr</title>
+        <script src="jsg.js"></script>
         <link rel="stylesheet" href="jsg.css" />
     </head>
 
@@ -12,11 +13,10 @@
             <h1>JS Guessr</h1>
             <p>A number guessing game! A number has already been generated, so you can start right away!</p>
             <input type="text" id="guess" placeholder="Guess a number from 1-100.." />
-            <button id="gc">Guess!</button>
+            <button onclick="guess()">Guess!</button>
             <p>‎</p>
             <p>Attempt Count:</p>
             <p id="aC">0</p>
         </main>
-    <script src="jsg.js"></script>
     </body>
 </html>
