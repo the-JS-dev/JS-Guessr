@@ -1,7 +1,11 @@
 var answer = parseInt(Math.random() * 100);
 var numAttempts = 0;
+var guessElement = document.getElementById('gc');
+guessElement.addEventListener('click', guess);
+
 console.log(answer);
 var answerISCorrect = false;
+
 function guess() {
     var rawField = document.getElementById("guess");
     var naturalField = parseInt(rawField.value);
