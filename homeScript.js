@@ -1,10 +1,14 @@
 var answer = parseInt(Math.random() * 100);
+var enteredNumbers = [];
 var numAttempts = 0;
 var guessElement = document.getElementById('gc');
+var distance = 0;
 guessElement.addEventListener('click', guess);
 
 console.log(answer);
 var answerISCorrect = false;
+
+
 
 function guess() {
     var rawField = document.getElementById("guess");
@@ -15,21 +19,28 @@ function guess() {
         } else {
             if (naturalField === answer) {
                 numAttempts += 1;
+                enteredNumbers.push(naturalField);
                 document.getElementById("aC").innerHTML = numAttempts;
-                window.alert("Congratulations! You guessed the number! Reload the page to play again...");
+                document.getElementById("eN").innerHTML = enteredNumbers;
+                window.alert("Congratulations! You guessed the number in "+numAttempts+" attempts! Click 'OK' to play again...");
                 answerISCorrect = true;
+                location.reload();
             } else {
                 if (naturalField >= answer) {
                     numAttempts += 1;
+                    enteredNumbers.push(naturalField);
                     document.getElementById("aC").innerHTML = numAttempts;
-                    window.alert("The number is too high... try again!");
+                    document.getElementById("eN").innerHTML = enteredNumbers;
+                    window.alert("Your guess is higher than the number... try again!");
                 } else {
                     if (naturalField <= answer) {
                         numAttempts += 1;
+                        enteredNumbers.push(naturalField);
                         document.getElementById("aC").innerHTML = numAttempts;
-                        window.alert("The number is too low... try again!");
+                        document.getElementById("eN").innerHTML = enteredNumbers;
+                        window.alert("Your guess is lower than the number... try again!");
                     } else {
-                        window.alert("That isn't a number... try again!");
+                        if (naturalField == '') {window.alert('Please enter a valid input! No letters, or null values~');}   
                     }
                 }
             }
